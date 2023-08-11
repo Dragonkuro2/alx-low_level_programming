@@ -2,8 +2,8 @@
 #include <time.h>
 #include <stdio.h>
 /* more headers goes there */
-/*main - Entry function
-/*return: Always retun the value 0
+/*main - Entry function */
+/*return: Always retun the value 0 */
 /* betty style doc for function main goes there */
 int main(void)
 {
