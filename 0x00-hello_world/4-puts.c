@@ -1,4 +1,4 @@
-include < stdio.h >
+#include <stdio.h>
 /**
  * main - The main function
  * Return: it always return the value 0
