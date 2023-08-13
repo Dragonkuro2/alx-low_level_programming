@@ -15,9 +15,9 @@ for (a = 'a'; a <= 'z'; a++)
 {
 putchar(a);
 }
-for (b = 'A'; b <= 'Z'; b++)
+for (A = 'A'; A <= 'Z'; A++)
 {
-putchar(b);
+putchar(A);
 }
 
 return (0);
