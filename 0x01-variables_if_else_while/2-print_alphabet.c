@@ -8,11 +8,10 @@
 
 int main(void)
 {
-int i;
-char ALP;
+char i;
 for (i = 'a'; i <= 'z'; i++)
 {
-putchar("%s \n", ALP[i]);
+putchar("%s \n", i);
 }
 
 return (0);
