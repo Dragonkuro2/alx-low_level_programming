@@ -10,11 +10,11 @@
 int main(void)
 {
 int i;
-char quote[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+char quote[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 for (i = 0 ; i != '\0'; i++)
 {
 putchar(quote[i]);
 }
 
-return (0);
+return (1);
 }
