@@ -16,7 +16,7 @@ for (i = 0 ; i != '\0'; i++)
 putchar(quote[i]);
 }
 {
-putchar('\n')
+putchar('\n');
 }
 
 return (1);
