@@ -19,8 +19,6 @@ for (i = 'a'; i <= 'z'; i++)
 {
 if (c == i)
 	b = 1;
-else
-	b = 0;
 }
 
 return (b);
