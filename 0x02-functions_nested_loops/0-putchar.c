@@ -1,9 +1,9 @@
-#include <stdio.h>
+#include "_putchar.h"
 
 /**
- * main - the main fucntion
+ * main - the entry point
  *
- * Return: always return the value 0
+ * Return: always return 0
  *
  */
 
@@ -12,7 +12,8 @@ int main(void)
 int i;
 char T[] = "_putchar";
 for (i = 0; i != '\0'; i++)
-	putchar(T(i));
+	_putchar(T[i]);
+_putchar('\n');
 
 return (0);
 }
