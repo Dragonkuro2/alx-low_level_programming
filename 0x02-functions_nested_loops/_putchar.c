@@ -9,7 +9,7 @@
  * @c: is the charachter that we will print
  */
 
-int _putchar(char c);
+char _putchar(char c);
 {
 
 return (write(1, &c, 1));

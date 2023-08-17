@@ -11,7 +11,7 @@ int main(void)
 {
 int i;
 char T[] = "_putchar";
-for (i = 0; i != '\0'; i++)
+for (i = 0; i < 8; i++)
 	_putchar(T[i]);
 _putchar('\n');
 
