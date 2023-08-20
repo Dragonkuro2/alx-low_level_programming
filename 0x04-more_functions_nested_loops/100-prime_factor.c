@@ -9,7 +9,7 @@
 
 long int prime_number(long int n)
 {
-int prnum, i;
+long int prnum, i;
 
 while (n % 2 == 0)
 	n = n / 2;
@@ -23,9 +23,9 @@ while (n % i == 0)
 }
 }
 if (n > 2)
-	prnum = n;
+prnum = n;
 
-	return (prnum);
+return (prnum);
 }
 
 /**
