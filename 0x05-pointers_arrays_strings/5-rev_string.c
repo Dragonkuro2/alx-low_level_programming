@@ -16,10 +16,8 @@ while (s[i])
 
 for (j = 0; j <= i / 2; j++)
 {
-tmp = s[i];
-s[i] = s[j];
-s[j] = tmp;
-i--;
+tmp = s[j];
+s[j] = s[i - 1 - j];
+s[i - 1 - j] = tmp;
 }
-_putchar('\n');
 }
