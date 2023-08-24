@@ -11,26 +11,16 @@
 char *rot13(char *s)
 {
 int i, j;
-char s1[] = "ABCDEFGHIJKLM";
-char s2[] = "NOPQRSTUVWXYZ";
-char s3[] = "abcdefghijklm";
-char s4[] = "nopqrstuvwxyz";
+char s1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char s2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 for (i = 0; s[i] != '\0'; i++)
 {
-for (j = 0; j < 13; j++)
+for (j = 0; j < 52; j++)
 {
 if (s[i] == s1[j])
-	s[i] = s2[j];
-else if (s[i] == s2[j])
-	s[i] = s1[j];
-else if (s[i] == s3[j])
-	s[i] = s4[j];
-else if (s[i] == s4[j])
-	s[i] = s3[j];
+s[i] = s2[j];
 }
-
 }
-
 return (s);
 }
