@@ -16,8 +16,10 @@ char array[] = " \t\n,;.!?\"(){}";
 for (i = 0; s[i] != '\0'; i++)
 {
 for (j = 0; array[j] != '\0'; j++)
+{
 	if (s[i] == array[j] && s[i + 1] >= 97 && s[i + 1] <= 122)
 		s[i + 1] = s[i + 1] - 32;
+}
 }
 return (s);
 }
