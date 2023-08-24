@@ -14,8 +14,8 @@ int i, tmp;
 for (i = 0; i <= n / 2; i++)
 {
 tmp = a[n - i - 1];
-a[n - i -1] = a[i];
+a[n - i - 1] = a[i];
 a[i] = tmp;
 }
-
+a[n] = '\0';
 }
