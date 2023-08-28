@@ -23,7 +23,7 @@ break;
 }
 }
 if (witness != 0)
-	return (&s[witness]);
+	return (s[witness]);
 else
 	return (NULL);
 }
