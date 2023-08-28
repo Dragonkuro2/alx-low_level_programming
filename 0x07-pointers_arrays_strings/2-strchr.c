@@ -12,18 +12,14 @@
 char *_strchr(char *s, char c)
 {
 size_t i;
-int witness = 0;
 
 for (i = 0; s[i] != '\0'; i++)
 {
 if (s[i] == c)
 {
-witness = i;
+return (&s[i]);
 break;
 }
 }
-if (witness != 0)
-	return (s + witness);
-else
-	return (NULL);
+return (NULL);
 }
