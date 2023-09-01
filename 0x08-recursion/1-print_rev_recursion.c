@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * _print_rev_recursion - this function is like the function puts but in reverse
+ * _print_rev_recursion - this function is like
+ *	the function puts but in reverse
  *
  * @s: the input text
  *
