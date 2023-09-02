@@ -21,5 +21,5 @@ if (s[i] == accept[j])
 }
 }
 
-return (NULL);
+return ('\0');
 }
