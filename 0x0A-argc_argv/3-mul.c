@@ -12,14 +12,16 @@
 
 int main(int argc, char *argv[])
 {
-int num1 = atoi(argv[1]);
-int num2 = atoi(argv[2]);
-if (argc != 3)
+int num3;
+if (argc == 3)
 {
-printf("Error");
-return (1);
+num3 = atoi(argv[1]) * atoi(argv[2]);
+printf("%d\n", num3);
+return (0);
 }
 else
-printf("%d\n", num1 * num2);
-return (0);
+{
+printf("Error\n");
+return (1);
+}
 }
