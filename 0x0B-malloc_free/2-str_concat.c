@@ -28,6 +28,6 @@ strcpy(s3, s1);
 strcat(s3, s2);
 
 return (s3);
-
+free(s3);
 
 }
