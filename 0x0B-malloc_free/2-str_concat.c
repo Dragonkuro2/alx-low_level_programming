@@ -17,9 +17,12 @@ size_t i, j = 0;
 char *s3 = (char *)malloc(sizeof(char) * (strlen(s1) + strlen(s2) + 2));
 if (s3 == NULL)
         return (NULL);
-for (i = 0; i < strlen(s1); i++)
-*(s3 + i) = *(s1 + i);
-s3[i] = ' ';
+for (i = 0; i <= strlen(s1); i++)
+{
+	*(s3 + i) = *(s1 + i);
+if (*(s3 + i) == '\0')
+	*(s3 + i) = ' ';
+}
 for (; i < (strlen(s1) + strlen(s2) + 2); i++, j++)
 	*(s3 + i) = *(s2 + j);
 return (s3);
