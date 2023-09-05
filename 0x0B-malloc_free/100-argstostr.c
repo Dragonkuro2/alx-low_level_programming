@@ -19,11 +19,10 @@ if (ac == 0 || av == NULL)
 	return (NULL);
 
 for (i = 0; i < ac; i++)
-	for (len = 0; av[i][len]; len++)
-		size++;
+		size += strlen(av[i]) + 1;
 
-newarray = (char *)malloc((sizeof(char) * size) + ac + 1);
-if (newarray == NULL)
+newarray = (char *)malloc(sizeof(char) * size + 1);
+if (newarray == NULL || newarray == 0)
 	return (NULL);
 
 for (i = 0; i < ac; i++)
