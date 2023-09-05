@@ -28,7 +28,7 @@ if (newarray == NULL)
 
 for (i = 0; i < ac; i++)
 {
-	for (len = 0; av[i][len]; len++)
+	for (len = 0; av[i][len] != '\0'; len++)
 	{
 	newarray[new] = av[i][len];
 	new++;
