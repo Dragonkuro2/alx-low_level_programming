@@ -21,13 +21,18 @@ else
 {
 s = (int **)malloc(sizeof(int *) * width);
 if (s == NULL)
+{
 	return (NULL);
-
+free(s);
+}
 for (i = 0; i < width; i++)
 {
 	s[i] = (int *)malloc(sizeof(int) * height);
 		if (s[i] == NULL)
+		{
 			return (NULL);
+		free(s[i]);
+		}
 }
 for (i = 0; i < width; i++)
 	for (j = 0; j < height; j++)
