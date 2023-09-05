@@ -22,7 +22,7 @@ for (i = 0; i < ac; i++)
 		size += strlen(av[i]) + 1;
 
 newarray = (char *)malloc(sizeof(char) * size + 1);
-if (newarray == NULL || newarray == 0)
+if (newarray == NULL)
 	return (NULL);
 
 for (i = 0; i < ac; i++)
@@ -32,7 +32,7 @@ for (i = 0; i < ac; i++)
 	newarray[new] = av[i][len];
 	new++;
 	}
-printf("\n");
+newarray[new] = '\n';
 new++;
 }
 
