@@ -17,11 +17,11 @@ size_t i;
 if (nmemb == 0 || size == 0)
 	return (NULL);
 
-new = (char *)malloc(size * nmemb + 1);
+new = (char *)malloc(size * nmemb);
 if (new == NULL)
 	return (NULL);
 for (i = 0; i < nmemb; i++)
-	new[i] = 0;
+	*(new + i) = 0;
 
 return (new);
 }
