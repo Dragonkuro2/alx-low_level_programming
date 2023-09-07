@@ -20,12 +20,8 @@ array = (int *)malloc(sizeof(int) * (max - min + 1));
 if (array == NULL)
 	return (NULL);
 
-for (i = 0; min <= max; i++)
-{
+for (i = 0; min <= max; i++, min++)
 	array[i] = min;
-	min++;
-}
-array[i] = '\0';
 
 return (array);
 }
