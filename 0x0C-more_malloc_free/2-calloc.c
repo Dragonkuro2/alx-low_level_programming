@@ -17,7 +17,7 @@ size_t i;
 if (nmemb == 0 || size == 0)
 	return (NULL);
 
-new = (char *)malloc(size * nmemb);
+new = (char *)malloc(size * nmemb + 1);
 if (new == NULL)
 	return (NULL);
 for (i = 0; i < nmemb; i++)
