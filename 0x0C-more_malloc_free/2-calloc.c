@@ -20,8 +20,8 @@ if (nmemb == 0 || size == 0)
 new = (char *)malloc(size * nmemb);
 if (new == NULL)
 	return (NULL);
-for (i = 0; i < nmemb; i++)
-	*(new + i) = 0;
+for (i = 0; i < nmemb * size; i++)
+	new[i] = 0;
 
 return (new);
 }
