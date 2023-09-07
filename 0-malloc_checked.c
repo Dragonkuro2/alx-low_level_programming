@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdlib.h>
 /**
  * malloc_checked - this function just check if we can use the function malloc or no
  *
