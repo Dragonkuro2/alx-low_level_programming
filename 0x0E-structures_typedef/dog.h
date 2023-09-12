@@ -5,7 +5,7 @@
  * struct dog - this is a new data structure
  * @name: the first arg
  * @age: the second one
- * @owner: the 3rd one
+ * @owner: the 3rd onei
  */
 
 struct dog
@@ -15,7 +15,13 @@ float age;
 char *owner;
 };
 
+/**
+ * dog_t - the new name of the struct dog
+ */
+typedef struct dog dog_t;
+
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
+
 
 #endif
