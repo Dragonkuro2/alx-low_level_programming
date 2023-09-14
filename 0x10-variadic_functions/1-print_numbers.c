@@ -19,11 +19,8 @@ for (i = 0; i < n; i++)
 {
 int arg = va_arg(list, int);
 printf("%d", arg);
-if (i < n - 1)
+if (i < n - 1 && separator)
 {
-if (separator == NULL && separator[0] != '\0')
-	printf(" ");
-else
 	printf("%s ", separator);
 }
 }
