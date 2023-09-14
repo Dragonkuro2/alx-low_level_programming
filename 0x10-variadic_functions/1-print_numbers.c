@@ -21,7 +21,7 @@ int arg = va_arg(list, int);
 printf("%d", arg);
 if (i < n - 1 && separator)
 {
-	printf("%s ", separator);
+	printf("%s", separator);
 }
 }
 printf("\n");
