@@ -1,72 +1,53 @@
 #include "variadic_functions.h"
-#include <stdarg.h>
 #include <stdio.h>
-#include <stddef.h>
+#include <stdarg.h>
 
 /**
- * should_print_separator - this function checks if a separator
- *				should be printed or not
- * @symbol: the separator symbols
- * @currentChar: the current character in the format string
- * @nextChar: the next character in the format string
+ * print_all - prints anything.
+ * @format: a list of types of arguments passed to the function.
  *
- * Return: 1 if a separator should be printed, 0 otherwise
+ * Return: no return.
  */
-int should_print_separator(const char *symbol, char currentChar, char nextChar)
-{
-size_t j = 0;
-
-	while (symbol[j])
-	{
-	if (symbol[j] == currentChar && nextChar != '\0')
-		return (1);
-	j++;
-	}
-
-return (0);
-}
-
-/**
- * print_all - this function prints all the type of arg
- * @format: the symbol of the arg
- * @...: the args
- */
-
 void print_all(const char * const format, ...)
 {
-va_list list;
-size_t i = 0;
-char symbol[] = "cifs";
-va_start(list, format);
-while (format[i])
-{
-	switch (format[i])
+	va_list valist;
+	unsigned int i = 0, j, c = 0;
+	char *str;
+	const char symbol[] = "cifs";
+
+	va_start(valist, format);
+	while (format[i])
 	{
+		j = 0;
+		while (symbol[j])
+		{
+			if (format[i] == symbol[j] && c)
+			{
+				printf(", ");
+				break;
+			} j++;
+		}
+		switch (format[i])
+		{
 		case 'c':
-			printf("%c", va_arg(list, int));
+			printf("%c", va_arg(valist, int)), c = 1;
 			break;
 		case 'i':
-			printf("%d", va_arg(list, int));
+			printf("%d", va_arg(valist, int)), c = 1;
 			break;
 		case 'f':
-			printf("%f", va_arg(list, double));
+			printf("%f", va_arg(valist, double)), c = 1;
 			break;
 		case 's':
-		{
-		char *arg = va_arg(list, char *);
-			if (arg == NULL)
+			str = va_arg(valist, char *), c = 1;
+			if (!str)
+			{
 				printf("(nil)");
-			else
-				printf("%s", arg);
+				break;
+			}
+			printf("%s", str);
 			break;
-		}
-		default:
-			break;
+		} i++;
 	}
-if (should_print_separator(symbol, format[i], format[i + 1]))
-	printf(", ");
-i++;
-}
-printf("\n");
-va_end(list);
+	printf("\n"), va_end(valist);
 }
