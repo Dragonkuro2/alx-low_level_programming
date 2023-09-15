@@ -4,6 +4,29 @@
 #include <stddef.h>
 
 /**
+ * should_print_separator - this function checks if a separator
+ *				should be printed or not
+ * @symbol: the separator symbols
+ * @currentChar: the current character in the format string
+ * @nextChar: the next character in the format string
+ *
+ * Return: 1 if a separator should be printed, 0 otherwise
+ */
+int should_print_separator(const char *symbol, char currentChar, char nextChar)
+{
+size_t j = 0;
+
+	while (symbol[j])
+	{
+	if (symbol[j] == currentChar && nextChar != '\0')
+		return (1);
+	j++;
+	}
+
+return (0);
+}
+
+/**
  * print_all - this function prints all the type of arg
  * @format: the symbol of the arg
  * @...: the args
@@ -12,7 +35,7 @@
 void print_all(const char * const format, ...)
 {
 va_list list;
-size_t i = 0, j;
+size_t i = 0;
 char symbol[] = "cifs";
 va_start(list, format);
 while (format[i])
@@ -40,16 +63,8 @@ while (format[i])
 		default:
 			break;
 	}
-	j = 0;
-		while (symbol[j])
-		{
-		if (symbol[j] == format[i] && format[i + 1] != '\0')
-		{
-			printf(", ");
-			break;
-		}
-			j++;
-		}
+if (should_print_separator(symbol, format[i], format[i + 1]))
+	printf(", ");
 i++;
 }
 printf("\n");
