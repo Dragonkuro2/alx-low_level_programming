@@ -9,24 +9,23 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *node, *current;
+list_t *node;
 	if (head == NULL)
 		return (NULL);
 	node = malloc(sizeof(struct list_s));
 	if (node == NULL)
 		return (NULL);
-	node->str = strdup(str);
-	if (node->str == NULL)
+	if (str)
 	{
-		free(node);
-		return (NULL);
+		node->str = strdup(str);
+		if (node->str == NULL)
+		{
+			free(node);
+			return (NULL);
+		}
+		node->len = strlen(node->str);
 	}
-	node->next = NULL;
-	while (current->next != NULL)
-	{
-		current = current->next;
-	}
-	current->next = node;
+	node->next = *head;
 	*head = node;
 	return (node);
 }
