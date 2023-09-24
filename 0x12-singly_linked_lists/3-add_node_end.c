@@ -10,10 +10,8 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 list_t *node;
-	if (head == NULL)
-		return (NULL);
-	node = malloc(sizeof(struct list_s));
-	if (node == NULL)
+	node = malloc(sizeof(list_t));
+	if (node == NULL || node == NULL)
 		return (NULL);
 	if (str)
 	{
