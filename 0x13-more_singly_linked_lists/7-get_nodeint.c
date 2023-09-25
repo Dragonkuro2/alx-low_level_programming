@@ -18,7 +18,7 @@ listint_t *node, *tmp;
 	{
 		if (head == NULL)
 			return (NULL);
-		else
+		else if (head != NULL)
 		{
 			head = head->next;
 		}
