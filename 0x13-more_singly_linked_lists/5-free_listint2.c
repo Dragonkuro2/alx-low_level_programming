@@ -16,5 +16,5 @@ listint_t *node;
 		*head = (*head)->next;
 		free(node);
 	}
-
+*head = NULL;
 }
