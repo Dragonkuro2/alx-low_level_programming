@@ -14,7 +14,7 @@ size_t i = 0;
 
 	if (head == NULL)
 		return (-1);
-	if (index == NULL)
+	if (index == 0)
 	{
 		node = *head;
 		*head = (*head)->next;
