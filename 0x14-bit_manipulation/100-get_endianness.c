@@ -7,6 +7,6 @@
 int get_endianness(void)
 {
 	size_t temp = 1;
-	
+
 	return (*(char *)&temp);
 }
