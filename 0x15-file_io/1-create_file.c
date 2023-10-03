@@ -12,15 +12,18 @@ int create_file(const char *filename, char *text_content)
 	int checker, counter = 0;
 	ssize_t checker2;
 
-	if (!filename || !text_content)
+	if (!filename)
 		return (-1);
 	checker = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (checker == -1)
 		return (-1);
-	while (text_content[counter])
+	if (text_content)
 	{
-		counter++;
-		checker2 = write(checker, text_content, counter);
+		while (text_content[counter])
+		{
+			counter++;
+			checker2 = write(checker, text_content, counter);
+		}
 	}
 	if (checker2 == -1)
 		return (-1);
