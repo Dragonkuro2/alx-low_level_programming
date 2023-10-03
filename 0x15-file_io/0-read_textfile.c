@@ -11,7 +11,8 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	FILE *function;
-	ssize_t checker1, checker2;
+	int checker1;
+	ssize_t checker2;
 	char *array;
 
 	if (filename == NULL)
