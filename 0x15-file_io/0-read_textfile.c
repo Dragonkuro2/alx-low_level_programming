@@ -10,37 +10,36 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *function;
-	int checker1;
-	ssize_t checker2;
 	char *array;
+	int function;
+	ssize_t checker1, checker2;
 
 	if (filename == NULL || letters == 0)
 		return (0);
-	function = fopen(filename, "r");
-	if (function == NULL)
+	function = open(filename, O_RDONLY);
+	if (function < 0)
 		return (0);
-	array = malloc(letters + 1);
+	array = malloc(letters);
 	if (array == NULL)
 	{
-		fclose(function);
+		close(function);
 		return (0);
 	}
-	checker1 = fread(array, 1, letters, function);
+	checker1 = read(function, array, letters);
 	if (checker1 < 0)
 	{
 		free(array);
-		fclose(function);
+		close(function);
 		return (0);
 	}
-	checker2 = fwrite(array, 1, checker1, stdout);
-	if (checker2 != checker1)
+	checker2 = write(STDOUT_FILENO, array, letters);
+	if (checker2 < 0)
 	{
 		free(array);
-		fclose(function);
+		close(function);
 		return (0);
 	}
-	fclose(function);
+	close(function);
 	free(array);
 	return (checker2);
 }
