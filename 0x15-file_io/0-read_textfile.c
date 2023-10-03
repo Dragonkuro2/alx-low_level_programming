@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	function = fopen(filename, "r");
 	if (function == NULL)
 		return (0);
-	array = malloc(letters);
+	array = malloc(letters + 1);
 	if (array == NULL)
 	{
 		fclose(function);
