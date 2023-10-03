@@ -14,7 +14,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int function;
 	ssize_t checker1, checker2;
 
-	if (filename == NULL || letters == 0)
+	if (filename == NULL)
 		return (0);
 	function = open(filename, O_RDONLY);
 	if (function == -1)
@@ -26,14 +26,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	checker1 = read(function, array, letters);
-	if (checker1 == -1)
+	if (checker1 < 0)
 	{
 		free(array);
 		close(function);
 		return (0);
 	}
 	checker2 = write(STDOUT_FILENO, array, letters);
-	if (checker2 == -1)
+	if (checker2 < 0)
 	{
 		free(array);
 		close(function);
