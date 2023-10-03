@@ -20,18 +20,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (function == NULL)
 		return (0);
 	array = malloc(letters);
-	if (array == NULL){
+	if (array == NULL)
+	{
 		fclose(function);
 		return (0);
 	}
 	checker1 = fread(array, 1, letters, function);
-	if (checker1 < 0){
+	if (checker1 < 0)
+	{
 		free(array);
 		fclose(function);
 		return (0);
 	}
 	checker2 = fwrite(array, 1, checker1, stdout);
-	if (checker2 != checker1){
+	if (checker2 != checker1)
+	{
 		free(array);
 		fclose(function);
 		return (0);
