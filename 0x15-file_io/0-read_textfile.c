@@ -15,7 +15,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t checker2;
 	char *array;
 
-	if (filename == NULL)
+	if (filename == NULL || letters == 0)
 		return (0);
 	function = fopen(filename, "r");
 	if (function == NULL)
