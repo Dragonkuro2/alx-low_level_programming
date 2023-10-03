@@ -9,7 +9,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int checker, counter = 0;
+	int checker;
 	ssize_t checker2;
 
 	if (!filename)
@@ -19,14 +19,13 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content)
 	{
-		while (text_content[counter])
+		checker2 = write(checker, text_content, strlen(text_content));
+		if (checker2 == -1)
 		{
-			counter++;
-			checker2 = write(checker, text_content, counter);
+			close(checker);
+			return (-1);
 		}
 	}
-	if (checker2 == -1)
-		return (-1);
 	close(checker);
 	return (1);
 }
